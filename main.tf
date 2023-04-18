@@ -100,17 +100,18 @@ output "aws_ami_id" {
   value = data.aws_ami.latest-amazon-linux-image.id
 }
 resource "aws_instance" "my_server" {
-  ami = data.aws_ami.latest-amazon-linux-image.id
+  ami           = data.aws_ami.latest-amazon-linux-image.id
   instance_type = var.instance_type
-  subnet_id = aws_subnet.my_subnet-1.id
+  subnet_id     = aws_subnet.my_subnet-1.id
   vpc_security_group_ids = [aws_default_security_group.default_sg.id]
-  availability_zone =var.avail_zone
+  availability_zone = var.avail_zone
   associate_public_ip_address = true
-  key_name = "Server-key.pem"
+  key_name      = "Server-key"
 
   tags = {
     Name = "${var.env_prefix}-server"
   }
 }
+
 
 
