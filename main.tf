@@ -45,3 +45,9 @@ resource "aws_internet_gateway" "my_igw" {
     Name = "${var.env_prefix}-igw"
   }
 }
+
+#Associating route-table to out subnet
+resource "aws_route_table_association" "rtb-subnet" {
+  subnet_id      = aws_subnet.my_subnet-1.id
+  route_table_id = aws_route_table.my_route_table.id
+}
