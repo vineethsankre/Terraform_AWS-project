@@ -7,6 +7,7 @@ variable vpc_cidr_block {}
 variable subnet_cidr_block {}
 variable env_prefix {}
 variable avail_zone{}
+variable my_ip_addr{}
 
 # Create a VPC
 resource "aws_vpc" "my_vpc" {
@@ -50,4 +51,27 @@ resource "aws_internet_gateway" "my_igw" {
 resource "aws_route_table_association" "rtb-subnet" {
   subnet_id      = aws_subnet.my_subnet-1.id
   route_table_id = aws_route_table.my_route_table.id
+}
+
+#Creating security group
+resource "aws_security_group" "my_sg" {
+  vpc_id = aws_vpc.my_vpc.id
+
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks = [var.my_ip_addr]
+  }
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    prefix_list_ids = []
+  }
+  tags = {
+    Name = "${var.env_prefix}-sg"
+  }
 }
