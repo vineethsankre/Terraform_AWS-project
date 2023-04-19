@@ -1,6 +1,6 @@
-<h1 align="center">Terraform_AWS-project</h1>
-<h1 align="center">Hi 👋 I'm Vineeth Sankre</h1>
-<h3 align="center">I'm currently learning DevOps and exploring ways to integrate it into my projects on GitHub</h3>
+<h1 align="left">Terraform_AWS-project</h1>
+<h1 align="left">Hi 👋 I'm Vineeth Sankre</h1>
+<h3 align="left">I'm currently learning DevOps and exploring ways to integrate it into my projects on GitHub</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=vineethsankre&label=Profile%20views&color=0e75b6&style=flat" alt="vineethsankre" /> </p>
 
