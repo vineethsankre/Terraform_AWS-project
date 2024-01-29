@@ -1,4 +1,4 @@
-<h1 align="left">Terraform_AWS-project</h1>
+<h1 align="left">AWS Infrastructure Automation with Terraform</h1>
 <h1 align="left">Hi 👋 I'm Vineeth Sankre</h1>
 <h3 align="left">I'm currently learning DevOps and exploring ways to integrate it into my projects on GitHub</h3>
 
